@@ -1,0 +1,295 @@
+/* public/css/estilos.css */
+:root {
+    --sidebar-bg: #0f172a;
+    --sidebar-color: #94a3b8;
+    --sidebar-hover: #1e293b;
+    --active-color: #38bdf8;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --border: #e2e8f0;
+    --primary: #0284c7;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    /* Esto alinea la barra lateral con el contenido */
+    min-height: 100vh;
+}
+
+/* Barra Lateral (Sidebar) - Súper limpia */
+aside.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+aside.sidebar .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    padding-left: 0.5rem;
+    color: var(--active-color);
+}
+
+aside.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+aside.sidebar nav a {
+    color: var(--sidebar-color);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+aside.sidebar nav a:hover {
+    background-color: var(--sidebar-hover);
+    color: white;
+}
+
+aside.sidebar nav a.active {
+    background-color: var(--sidebar-hover);
+    color: var(--active-color);
+}
+
+/* Área de Contenido Principal */
+main {
+    flex-grow: 1;
+    padding: 3rem;
+    max-width: 1100px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Sección de Bienvenida / Stats en el Dashboard */
+section.welcome-box {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.2);
+}
+
+section.welcome-box h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+}
+
+section.welcome-box p {
+    margin: 0;
+    color: #e0f2fe;
+}
+
+/* Accesos Rápidos en el Dashboard */
+section.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+article.action-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+article.action-card h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+}
+
+article.action-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Botones */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0369a1;
+}
+
+.btn-gray {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn-gray:hover {
+    background: #cbd5e1;
+}
+
+.btn-red {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-yellow {
+    background: var(--warning);
+    color: #0f172a;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+}
+
+th,
+td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+.estado {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.acciones-tabla {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+/* Formularios */
+form.form-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: var(--text);
+    background-color: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--active-color);
+    background-color: white;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.time-stamp {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* Modificadores de colores para la etiqueta .estado */
+.estado-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.estado-warning {
+    background-color: #fef3c7;
+    color: #d97706;
+}
